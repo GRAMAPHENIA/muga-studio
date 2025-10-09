@@ -1,0 +1,329 @@
+---
+import Layout from "../layouts/layout.astro";
+import Navigation from "../components/ui/Navigation/Navigation.astro";
+import Breadcrumb from "../components/ui/Breadcrumb/Breadcrumb.astro";
+import PageHeroSection from "../components/HeroSection/PageHeroSection.astro";
+import BentoCell from "../components/ui/BentoCell.astro";
+import IconWithBlurEffect from "../components/ui/IconWithBlurEffect.astro";
+import ArrowLink from "../components/ui/Button/ArrowLink.astro";
+import type { BreadcrumbItem } from "../types";
+
+const breadcrumbItems: BreadcrumbItem[] = [
+  {
+    label: "Servicios",
+    href: "/caracteristicas",
+    active: true,
+  },
+];
+---
+
+<Layout
+  title="Servicios | MUGA STUDIO"
+  description="Servicios especializados en diseño gráfico y producción audiovisual con Adobe Creative Suite"
+>
+  <Navigation>
+    <Breadcrumb items={breadcrumbItems} slot="mobile-breadcrumb" />
+  </Navigation>
+  <div class="hidden lg:block">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+  <PageHeroSection
+    title="Servicios Creativos"
+    description="Especialización técnica en las herramientas más avanzadas para diseño gráfico y producción audiovisual."
+    textAlign="left"
+    showBadge={true}
+    badgeText="Servicios"
+  />
+
+  <section class="relative px-6 lg:px-8">
+    <!-- Grid principal -->
+    <div class="mx-auto max-w-7xl">
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 gap-0 auto-rows-[minmax(200px,auto)]"
+      >
+        <!-- Fila 1: 1fr, 1fr, 2fr -->
+        <BentoCell
+          title="Photoshop"
+          colSpan="col-span-1 md:col-span-1"
+          bgClass="bg-white"
+          borderClass="border-gray-200"
+          rounded={false}
+          lightEffect={true}
+        >
+          <IconWithBlurEffect 
+            iconPath="/icons/component.svg"
+            iconAlt="Icono de Photoshop"
+            iconId="photoshop"
+          />
+
+          <ul class="space-y-2 text-muga-text-secondary relative z-10">
+            <li class="flex items-start">
+              <span class="text-accent mr-2">•</span>
+              <span>Retoque fotográfico</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-accent mr-2">•</span>
+              <span>Composición digital</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-accent mr-2">•</span>
+              <span>Manipulación de imágenes</span>
+            </li>
+          </ul>
+        </BentoCell>
+
+        <BentoCell
+          title="Illustrator"
+          colSpan="col-span-1 md:col-span-1"
+          bgClass="bg-white"
+          borderClass="border-gray-200"
+          rounded={false}
+          lightEffect={true}
+        >
+          <IconWithBlurEffect 
+            iconPath="/icons/chart-no-axes-combined.svg"
+            iconAlt="Icono de Illustrator"
+            iconId="illustrator"
+          />
+
+          <ul class="space-y-2 text-muga-text-secondary relative z-10">
+            <li class="flex items-start">
+              <span class="text-accent mr-2">•</span>
+              <span>Ilustración vectorial</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-accent mr-2">•</span>
+              <span>Diseño de logotipos</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-accent mr-2">•</span>
+              <span>Identidad visual</span>
+            </li>
+          </ul>
+        </BentoCell>
+
+        <BentoCell
+          title="Enfoque Creativo"
+          colSpan="col-span-1 md:col-span-2"
+          bgClass="bg-white"
+          borderClass="border-gray-200"
+          rounded={false}
+          lightEffect={true}
+        >
+          <IconWithBlurEffect 
+            iconPath="/icons/goal.svg"
+            iconAlt="Icono de creatividad"
+            iconId="creativity"
+          />
+
+          <p class="text-muga-text-secondary relative z-10">
+            En MUGA STUDIO, cada proyecto es una oportunidad para explorar nuevas 
+            posibilidades creativas. Mi enfoque combina técnica avanzada con visión 
+            artística para crear piezas que no solo comunican, sino que impactan.
+          </p>
+          <p class="mt-4 text-muga-text-secondary relative z-10">
+            Desde el concepto inicial hasta la entrega final, cada detalle se 
+            cuida con precisión profesional, utilizando las herramientas más 
+            avanzadas de Adobe Creative Suite.
+          </p>
+        </BentoCell>
+
+        <!-- Fila 2: 1fr, 2fr, 1fr -->
+        <BentoCell
+          title="Premiere Pro"
+          colSpan="col-span-1 md:col-span-1"
+          bgClass="bg-white"
+          borderClass="border-gray-200"
+          rounded={false}
+          lightEffect={true}
+        >
+          <IconWithBlurEffect 
+            iconPath="/icons/keyboard.svg"
+            iconAlt="Icono de Premiere"
+            iconId="premiere"
+          />
+
+          <ul class="space-y-2 text-muga-text-secondary relative z-10">
+            <li class="flex items-start">
+              <span class="text-accent mr-2">•</span>
+              <span>Edición profesional</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-accent mr-2">•</span>
+              <span>Montaje narrativo</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-accent mr-2">•</span>
+              <span>Post-producción</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-accent mr-2">•</span>
+              <span>Color grading</span>
+            </li>
+          </ul>
+        </BentoCell>
+
+        <BentoCell
+          title="Herramientas Especializadas"
+          colSpan="col-span-1 md:col-span-2"
+          bgClass="bg-white"
+          borderClass="border-gray-200"
+          rounded={false}
+          lightEffect={true}
+        >
+          <IconWithBlurEffect 
+            iconPath="/icons/cpu.svg"
+            iconAlt="Icono de herramientas"
+            iconId="tools"
+            iconSize="w-40 h-40 opacity-30"
+          />
+
+          <div class="flex flex-wrap gap-2 mb-4 relative z-20">
+            <span class="px-2 py-1 bg-accent/10 text-accent rounded text-sm"
+              >Photoshop</span
+            >
+            <span class="px-2 py-1 bg-accent/10 text-accent rounded text-sm"
+              >Illustrator</span
+            >
+            <span class="px-2 py-1 bg-accent/10 text-accent rounded text-sm"
+              >Premiere Pro</span
+            >
+            <span class="px-2 py-1 bg-accent/10 text-accent rounded text-sm"
+              >After Effects</span
+            >
+            <span class="px-2 py-1 bg-accent/10 text-accent rounded text-sm"
+              >Creative Cloud</span
+            >
+          </div>
+          <p class="text-muga-text-secondary relative z-20 mt-10">
+            Dominio completo del ecosistema Adobe Creative Suite, utilizando 
+            las funcionalidades más avanzadas de cada herramienta para crear 
+            contenido visual de alta calidad y impacto profesional.
+          </p>
+        </BentoCell>
+
+        <BentoCell
+          title="After Effects"
+          colSpan="col-span-1 md:col-span-1"
+          bgClass="bg-white"
+          borderClass="border-gray-200"
+          rounded={false}
+          lightEffect={true}
+        >
+          <IconWithBlurEffect 
+            iconPath="/icons/scan-search.svg"
+            iconAlt="Icono de After Effects"
+            iconId="aftereffects"
+          />
+
+          <ul class="space-y-2 text-muga-text-secondary relative z-10">
+            <li class="flex items-start">
+              <span class="text-accent mr-2">•</span>
+              <span>Motion graphics</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-accent mr-2">•</span>
+              <span>Efectos visuales</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-accent mr-2">•</span>
+              <span>Animación 2D/3D</span>
+            </li>
+          </ul>
+        </BentoCell>
+
+        <!-- Fila 3: 2fr, 1fr, 1fr -->
+        <BentoCell
+          title="Proceso Creativo"
+          colSpan="col-span-1 md:col-span-2"
+          bgClass="bg-white"
+          borderClass="border-gray-200"
+          rounded={false}
+          lightEffect={true}
+        >
+          <IconWithBlurEffect 
+            iconPath="/icons/monitor-smartphone.svg"
+            iconAlt="Icono de proceso"
+            iconId="process"
+          />
+          
+          <p class="text-muga-text-secondary">
+            Cada proyecto sigue un proceso estructurado que va desde la 
+            conceptualización hasta la entrega final. Comenzamos con una 
+            investigación profunda del brief, seguida de la exploración 
+            creativa y el desarrollo técnico.
+          </p>
+          <p class="mt-4 text-muga-text-secondary">
+            La iteración y el refinamiento son parte fundamental del proceso, 
+            asegurando que cada pieza no solo cumpla con los objetivos técnicos, 
+            sino que también genere el impacto visual deseado.
+          </p>
+        </BentoCell>
+
+        <BentoCell
+          title="Especialización"
+          colSpan="col-span-1 md:col-span-1"
+          bgClass="bg-white"
+          borderClass="border-gray-200"
+          rounded={false}
+          lightEffect={true}
+        >
+          <IconWithBlurEffect 
+            iconPath="/icons/hard-hat.svg"
+            iconAlt="Icono de especialización"
+            iconId="specialization"
+          />
+          
+          <ul class="space-y-2 text-muga-text-secondary relative z-10">
+            <li class="flex items-start">
+              <span class="text-accent mr-2">•</span>
+              <span>Branding e identidad</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-accent mr-2">•</span>
+              <span>Contenido audiovisual</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-accent mr-2">•</span>
+              <span>Diseño editorial</span>
+            </li>
+          </ul>
+        </BentoCell>
+
+        <BentoCell
+          title="Colaboración"
+          colSpan="col-span-1 md:col-span-1"
+          bgClass="bg-white"
+          borderClass="border-gray-200"
+          rounded={false}
+          lightEffect={true}
+        >
+          <IconWithBlurEffect 
+            iconPath="/icons/message-square-text.svg"
+            iconAlt="Icono de colaboración"
+            iconId="collaboration"
+          />
+          
+          <div class="flex flex-col space-y-4 relative z-10">
+            <ArrowLink href="/contacto" text="Iniciar proyecto" />
+            <ArrowLink href="/portafolio" text="Ver trabajos" />
+            <ArrowLink href="/nosotros" text="Conocer más" />
+          </div>
+        </BentoCell>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .arrow-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  a:hover .arrow-icon {
+    transform: translateX(4px);
+  }
+</style>
+
+<script src="../scripts/bento-grid.ts"></script>

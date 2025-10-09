@@ -1,0 +1,45 @@
+/* Estilos para el Bento Grid */
+
+/* Celda base */
+.bento-cell {
+  position: relative;
+  transition: border-color 0.3s ease;
+  overflow: hidden;
+}
+
+/* Efecto de luz dentro de cada celda */
+.light-effect {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(255, 83, 83, 0.5); /* accent/20 */
+  pointer-events: none;
+  filter: blur(100px);
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Aseguramos que el contenido esté por encima del efecto de luz */
+.bento-cell > *:not(.light-effect) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Estilos para los iconos con efecto de blur */
+.icon-with-blur-effect {
+  stroke: #ff5353;
+  stroke-width: 1;
+  opacity: 0;
+  filter: blur(3px);
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+/* Variables CSS para animaciones más fluidas */
+:root {
+  --light-opacity: 0;
+  --light-x: 0px;
+  --light-y: 0px;
+  --blur-amount: 3px;
+}

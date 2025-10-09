@@ -1,0 +1,278 @@
+---
+import Layout from "../layouts/layout.astro";
+import Navigation from "../components/ui/Navigation/Navigation.astro";
+import Breadcrumb from "../components/ui/Breadcrumb/Breadcrumb.astro";
+import PageHeroSection from "../components/HeroSection/PageHeroSection.astro";
+import type { BreadcrumbItem } from "../types";
+
+const breadcrumbItems: BreadcrumbItem[] = [
+  {
+    label: "Contacto",
+    href: "/contacto",
+    active: true,
+  },
+];
+---
+
+<Layout title="Contacto | MUGA STUDIO" description="Inicia tu proyecto creativo con MUGA STUDIO">
+  <Navigation>
+    <Breadcrumb items={breadcrumbItems} slot="mobile-breadcrumb" />
+  </Navigation>
+  <div class="hidden lg:block">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+  <PageHeroSection 
+    title="Hablemos de tu proyecto"
+    description="Cada gran proyecto comienza con una conversación. Cuéntame tu visión y exploremos cómo darle vida."
+    textAlign="left"
+    showBadge={true}
+    badgeText="Contacto"
+  />
+  
+  <!-- Sección de Contacto -->
+  <section class="relative px-6 lg:px-8 py-16">
+    <div class="mx-auto max-w-6xl">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Información de Contacto -->
+        <div>
+          <h2 class="text-2xl font-semibold text-muga-text-primary mb-6">
+            Especialidades Creativas
+          </h2>
+          <p class="text-muga-text-secondary mb-8">
+            Desde conceptos iniciales hasta entregas finales, cada proyecto recibe 
+            atención personalizada y expertise técnico en las herramientas más 
+            avanzadas de Adobe Creative Suite.
+          </p>
+
+          <!-- Servicios -->
+          <div class="space-y-6 mb-8">
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-muga-text-primary mb-1">Diseño Gráfico</h3>
+                <p class="text-sm text-muga-text-secondary">Photoshop e Illustrator para branding, retoque fotográfico y diseño editorial</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-muga-text-primary mb-1">Producción Audiovisual</h3>
+                <p class="text-sm text-muga-text-secondary">Premiere Pro y After Effects para edición, motion graphics y efectos visuales</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-muga-text-primary mb-1">Proyectos Integrales</h3>
+                <p class="text-sm text-muga-text-secondary">Combinación de múltiples disciplinas para proyectos complejos y campañas completas</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Información Adicional -->
+          <div class="bg-muga-light-100 rounded-xl p-6">
+            <h3 class="font-semibold text-muga-text-primary mb-3">Proceso de Trabajo</h3>
+            <ul class="space-y-2 text-sm text-muga-text-secondary">
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-accent rounded-full mr-3"></span>
+                Consulta inicial y análisis del brief
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-accent rounded-full mr-3"></span>
+                Propuesta creativa y cotización
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-accent rounded-full mr-3"></span>
+                Desarrollo y revisiones
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-accent rounded-full mr-3"></span>
+                Entrega final y archivos fuente
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Formulario de Contacto -->
+        <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+          <h2 class="text-2xl font-semibold text-muga-text-primary mb-6">
+            Iniciar Proyecto
+          </h2>
+
+          <!-- Mensajes de estado del formulario -->
+          <div id="form-messages" class="mb-6 hidden">
+            <div id="success-message" class="hidden bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-md">
+              ¡Mensaje enviado exitosamente! Me pondré en contacto pronto.
+            </div>
+            <div id="error-message" class="hidden bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-md">
+              Error al enviar el mensaje. Por favor, intenta de nuevo.
+            </div>
+          </div>
+
+          <form id="contact-form" method="POST" action="https://formspree.io/f/mnngbqnb" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-muga-text-primary mb-2">Nombre</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="w-full px-3 py-2 bg-muga-light-50 border border-gray-300 rounded-md text-muga-text-primary placeholder-muga-text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                  placeholder="Tu nombre"
+                  required
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-muga-text-primary mb-2">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="w-full px-3 py-2 bg-muga-light-50 border border-gray-300 rounded-md text-muga-text-primary placeholder-muga-text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                  placeholder="tu@email.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="project" class="block text-sm font-medium text-muga-text-primary mb-2">Tipo de proyecto</label>
+              <select
+                id="project"
+                name="project"
+                class="w-full px-3 py-2 bg-muga-light-50 border border-gray-300 rounded-md text-muga-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                required
+              >
+                <option value="">Selecciona una opción</option>
+                <option value="branding">Branding e Identidad Visual</option>
+                <option value="diseno-grafico">Diseño Gráfico</option>
+                <option value="retoque-fotografico">Retoque Fotográfico</option>
+                <option value="video-edicion">Edición de Video</option>
+                <option value="motion-graphics">Motion Graphics</option>
+                <option value="proyecto-integral">Proyecto Integral</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="budget" class="block text-sm font-medium text-muga-text-primary mb-2">Presupuesto estimado</label>
+              <select
+                id="budget"
+                name="budget"
+                class="w-full px-3 py-2 bg-muga-light-50 border border-gray-300 rounded-md text-muga-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+              >
+                <option value="">Selecciona un rango</option>
+                <option value="500-1000">$500 - $1,000</option>
+                <option value="1000-2500">$1,000 - $2,500</option>
+                <option value="2500-5000">$2,500 - $5,000</option>
+                <option value="5000+">$5,000+</option>
+                <option value="por-definir">Por definir</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-muga-text-primary mb-2">Descripción del proyecto</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                class="w-full px-3 py-2 bg-muga-light-50 border border-gray-300 rounded-md text-muga-text-primary placeholder-muga-text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                placeholder="Cuéntame sobre tu proyecto, objetivos, timeline y cualquier detalle relevante..."
+                required
+              ></textarea>
+            </div>
+
+            <div class="text-center">
+              <button
+                type="submit"
+                id="submit-btn"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-semibold rounded-md hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-white transition disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <span id="btn-text">Enviar propuesta</span>
+                <span id="btn-arrow" aria-hidden="true">→</span>
+                <div id="btn-spinner" class="hidden animate-spin rounded-full h-4 w-4 border-b-2 border-white" aria-hidden="true"></div>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('contact-form') as HTMLFormElement;
+      const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+      const btnText = document.getElementById('btn-text') as HTMLSpanElement;
+      const btnArrow = document.getElementById('btn-arrow') as HTMLSpanElement;
+      const btnSpinner = document.getElementById('btn-spinner') as HTMLDivElement;
+      const formMessages = document.getElementById('form-messages') as HTMLDivElement;
+      const successMessage = document.getElementById('success-message') as HTMLDivElement;
+      const errorMessage = document.getElementById('error-message') as HTMLDivElement;
+
+      if (!form || !submitBtn || !btnText || !btnArrow || !btnSpinner || !formMessages || !successMessage || !errorMessage) {
+        console.error('No se encontraron todos los elementos del formulario');
+        return;
+      }
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Mostrar loading state
+        submitBtn.disabled = true;
+        btnText.textContent = 'Enviando...';
+        btnArrow.classList.add('hidden');
+        btnSpinner.classList.remove('hidden');
+
+        // Ocultar mensajes anteriores
+        formMessages.classList.add('hidden');
+        successMessage.classList.add('hidden');
+        errorMessage.classList.add('hidden');
+
+        try {
+          const formData = new FormData(form);
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+
+          if (response.ok) {
+            // Éxito
+            formMessages.classList.remove('hidden');
+            successMessage.classList.remove('hidden');
+            form.reset();
+          } else {
+            throw new Error('Error en el envío');
+          }
+        } catch (error) {
+          // Error
+          formMessages.classList.remove('hidden');
+          errorMessage.classList.remove('hidden');
+        } finally {
+          // Restaurar estado del botón
+          submitBtn.disabled = false;
+          btnText.textContent = 'Enviar propuesta';
+          btnArrow.classList.remove('hidden');
+          btnSpinner.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+</Layout>

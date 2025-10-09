@@ -1,0 +1,61 @@
+---
+// Props tipadas con más opciones para flexibilidad
+interface Props {
+  title?: string;
+  colSpan?: string; // Tailwind col-span
+  bgClass?: string; // Clase de fondo personalizable
+  borderClass?: string; // Clase de borde personalizable
+  rounded?: boolean; // Opción para esquinas redondeadas
+  lightEffect?: boolean; // Opción para activar/desactivar el efecto de luz
+}
+
+const { 
+  title, 
+  colSpan = "col-span-1 md:col-span-1", 
+  bgClass = "bg-white",
+  borderClass = "border-gray-200",
+  rounded = true,
+  lightEffect = true
+} = Astro.props;
+
+const roundedClass = rounded ? "rounded-xl" : "";
+---
+
+<div class={`bento-cell ${bgClass} ${colSpan} p-6 flex flex-col border ${borderClass} ${roundedClass} relative overflow-hidden`}>
+  {lightEffect && <div class="light-effect" aria-hidden="true"></div>}
+  
+  {title && <h3 class="text-lg font-medium text-muga-text-primary mb-4 ">{title}</h3>}
+  
+  <div class="relative z-10 flex-grow flex flex-col justify-center">
+    <slot />
+  </div>
+</div>
+
+<style>
+  /* Estilos integrados directamente en el componente */
+  .bento-cell {
+    position: relative;
+    transition: border-color 0.3s ease;
+    overflow: hidden;
+  }
+  
+  /* Efecto de luz dentro de cada celda */
+  .light-effect {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgba(255, 83, 83, 0.5); /* accent/20 */
+    pointer-events: none;
+    filter: blur(100px);
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Aseguramos que el contenido esté por encima del efecto de luz */
+  .bento-cell > *:not(.light-effect) {
+    position: relative;
+    z-index: 2;
+  }
+</style>

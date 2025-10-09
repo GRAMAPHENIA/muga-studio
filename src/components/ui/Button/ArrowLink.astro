@@ -1,0 +1,44 @@
+---
+export interface Props {
+  href: string;
+  text: string;
+  textColor?: string;
+  hoverColor?: string;
+  iconSvg?: string;
+  arrowType?: "→" | "→" | "&rarr;";
+}
+
+const { 
+  href, 
+  text, 
+  textColor = "text-graylight", 
+  hoverColor = "hover:text-accent",
+  iconSvg,
+  arrowType = "→"
+} = Astro.props;
+---
+
+<a
+  href={href}
+  class={`inline-flex items-center ${textColor} ${hoverColor} transition-colors`}
+>
+  {iconSvg && <span class="icon-container mr-1" set:html={iconSvg} />}
+  <span>{text}</span>
+  <span class="ml-2 arrow-icon">{arrowType}</span>
+</a>
+
+<style>
+  .arrow-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  a:hover .arrow-icon {
+    transform: translateX(4px);
+  }
+  
+  .icon-container :global(svg) {
+    height: 1.25em;
+    width: 1.25em;
+  }
+</style>

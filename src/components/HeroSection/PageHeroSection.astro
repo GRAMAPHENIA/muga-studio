@@ -1,0 +1,95 @@
+---
+// PageHeroSection.astro
+// Componente reutilizable para la sección de héroe de todas las páginas
+export interface Props {
+  title: string;
+  description?: string;
+  showBadge?: boolean;
+  badgeText?: string;
+  badgeLink?: string;
+  primaryButtonText?: string;
+  primaryButtonLink?: string;
+  secondaryButtonText?: string;
+  secondaryButtonLink?: string;
+  textAlign?: "left" | "center"; // Propiedad para alineación
+}
+
+const {
+  title,
+  description = "",
+  showBadge = false,
+  badgeText = "Conocer",
+  badgeLink = "#",
+  primaryButtonText = "",
+  primaryButtonLink = "#",
+  secondaryButtonText = "",
+  secondaryButtonLink = "#",
+  textAlign = "center" // Por defecto centrado
+} = Astro.props;
+
+// Clases de alineación
+const textAlignClass = textAlign === "left" ? "text-left" : "text-center";
+const buttonAlignClass = textAlign === "left" ? "justify-start" : "justify-center";
+---
+
+<section class="hero-section">
+  <div class="relative px-6 lg:px-8">
+    <!-- Contenido principal -->
+    <div class={`${textAlign === "left" ? "mx-0 max-w-none" : "mx-auto max-w-2xl"} py-8`}>
+      {showBadge && (
+        <div class={`hidden sm:mb-4 sm:flex ${textAlign === "left" ? "sm:justify-start" : "sm:justify-center"}`}>
+          <div
+            class="relative rounded-full px-3 py-1 text-sm/6 text-accent ring-1 ring-accent/50"
+          >
+            <span class="font-semibold text-accent">{badgeText}</span>
+          </div>
+        </div>
+      )}
+      <div class={textAlignClass}>
+        <h1
+          class="text-5xl font-semibold tracking-tight text-balance text-muga-text-primary sm:text-7xl"
+        >
+          {title}
+        </h1>
+        {description && (
+          <p class="mt-4 text-lg font-medium text-pretty text-muga-text-secondary sm:text-xl/8 max-w-2xl">
+            {description}
+          </p>
+        )}
+        {(primaryButtonText || secondaryButtonText) && (
+          <div class={`mt-8 flex items-center ${buttonAlignClass} gap-x-6`}>
+            {primaryButtonText && (
+              <a
+                href={primaryButtonLink}
+                class="rounded-md bg-accent text-white px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-accent/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              >
+                {primaryButtonText}
+              </a>
+            )}
+            {secondaryButtonText && (
+              <a href={secondaryButtonLink} class="text-sm/6 font-semibold text-muga-text-secondary hover:text-muga-text-primary">
+                {secondaryButtonText} <span class="arrow-icon">→</span>
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    position: relative;
+    width: 100%;
+  }
+  
+  .arrow-icon {
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+  
+  a:hover .arrow-icon {
+    transform: translateX(4px);
+  }
+</style>

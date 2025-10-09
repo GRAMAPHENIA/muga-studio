@@ -1,0 +1,169 @@
+---
+import Layout from "../layouts/layout.astro";
+import Navigation from "../components/ui/Navigation/Navigation.astro";
+import Breadcrumb from "../components/ui/Breadcrumb/Breadcrumb.astro";
+import PageHeroSection from "../components/HeroSection/PageHeroSection.astro";
+import type { BreadcrumbItem } from "../types";
+
+const breadcrumbItems: BreadcrumbItem[] = [
+  {
+    label: "Portafolio",
+    href: "/portafolio",
+    active: true,
+  },
+];
+---
+
+<Layout title="Portafolio | MUGA STUDIO" description="Portafolio de proyectos creativos realizados con Adobe Creative Suite">
+  <Navigation>
+    <Breadcrumb items={breadcrumbItems} slot="mobile-breadcrumb" />
+  </Navigation>
+  <div class="hidden lg:block">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+  <PageHeroSection 
+    title="Portafolio Creativo"
+    description="Una selección de proyectos que demuestran versatilidad técnica y visión creativa en diseño gráfico y producción audiovisual."
+    textAlign="left"
+    showBadge={true}
+    badgeText="Trabajos"
+  />
+
+  <!-- Sección de Categorías -->
+  <section class="relative px-6 lg:px-8 py-16">
+    <div class="mx-auto max-w-7xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <!-- Diseño Gráfico -->
+        <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-muga-text-primary mb-2">Diseño Gráfico</h3>
+          <p class="text-muga-text-secondary text-sm">Photoshop & Illustrator</p>
+        </div>
+
+        <!-- Branding -->
+        <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-muga-text-primary mb-2">Branding</h3>
+          <p class="text-muga-text-secondary text-sm">Identidad Visual</p>
+        </div>
+
+        <!-- Video -->
+        <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-muga-text-primary mb-2">Edición de Video</h3>
+          <p class="text-muga-text-secondary text-sm">Premiere Pro</p>
+        </div>
+
+        <!-- Motion Graphics -->
+        <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-muga-text-primary mb-2">Motion Graphics</h3>
+          <p class="text-muga-text-secondary text-sm">After Effects</p>
+        </div>
+      </div>
+
+      <!-- Grid de Proyectos -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Proyecto 1 -->
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <img src="/products/edge.webp" alt="Identidad Corporativa" class="w-full h-48 object-cover" />
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-2 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">Branding</span>
+              <span class="px-2 py-1 bg-gray-100 text-muga-text-secondary text-xs font-medium rounded-full">Illustrator</span>
+            </div>
+            <h3 class="text-lg font-semibold text-muga-text-primary mb-2">Identidad Corporativa</h3>
+            <p class="text-muga-text-secondary text-sm mb-4">Desarrollo completo de identidad visual para empresa tecnológica, incluyendo logotipo, paleta de colores y aplicaciones.</p>
+            <button class="text-accent hover:text-accent/80 text-sm font-medium">Ver proyecto →</button>
+          </div>
+        </div>
+
+        <!-- Proyecto 2 -->
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <img src="/products/spark.webp" alt="Motion Graphics" class="w-full h-48 object-cover" />
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-2 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">Motion</span>
+              <span class="px-2 py-1 bg-gray-100 text-muga-text-secondary text-xs font-medium rounded-full">After Effects</span>
+            </div>
+            <h3 class="text-lg font-semibold text-muga-text-primary mb-2">Animación Corporativa</h3>
+            <p class="text-muga-text-secondary text-sm mb-4">Video promocional con motion graphics y efectos visuales para presentación de producto.</p>
+            <button class="text-accent hover:text-accent/80 text-sm font-medium">Ver proyecto →</button>
+          </div>
+        </div>
+
+        <!-- Proyecto 3 -->
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <img src="/products/edge.webp" alt="Retoque Fotográfico" class="w-full h-48 object-cover" />
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-2 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">Fotografía</span>
+              <span class="px-2 py-1 bg-gray-100 text-muga-text-secondary text-xs font-medium rounded-full">Photoshop</span>
+            </div>
+            <h3 class="text-lg font-semibold text-muga-text-primary mb-2">Retoque Profesional</h3>
+            <p class="text-muga-text-secondary text-sm mb-4">Serie de retoques fotográficos para campaña publicitaria con técnicas avanzadas de composición.</p>
+            <button class="text-accent hover:text-accent/80 text-sm font-medium">Ver proyecto →</button>
+          </div>
+        </div>
+
+        <!-- Proyecto 4 -->
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <img src="/products/spark.webp" alt="Diseño Editorial" class="w-full h-48 object-cover" />
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-2 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">Editorial</span>
+              <span class="px-2 py-1 bg-gray-100 text-muga-text-secondary text-xs font-medium rounded-full">Illustrator</span>
+            </div>
+            <h3 class="text-lg font-semibold text-muga-text-primary mb-2">Diseño Editorial</h3>
+            <p class="text-muga-text-secondary text-sm mb-4">Maquetación y diseño de revista corporativa con enfoque en legibilidad y estética moderna.</p>
+            <button class="text-accent hover:text-accent/80 text-sm font-medium">Ver proyecto →</button>
+          </div>
+        </div>
+
+        <!-- Proyecto 5 -->
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <img src="/products/edge.webp" alt="Video Promocional" class="w-full h-48 object-cover" />
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-2 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">Video</span>
+              <span class="px-2 py-1 bg-gray-100 text-muga-text-secondary text-xs font-medium rounded-full">Premiere</span>
+            </div>
+            <h3 class="text-lg font-semibold text-muga-text-primary mb-2">Video Promocional</h3>
+            <p class="text-muga-text-secondary text-sm mb-4">Edición y post-producción de video promocional con narrativa visual impactante.</p>
+            <button class="text-accent hover:text-accent/80 text-sm font-medium">Ver proyecto →</button>
+          </div>
+        </div>
+
+        <!-- Proyecto 6 -->
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <img src="/products/spark.webp" alt="Ilustración Digital" class="w-full h-48 object-cover" />
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-2 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">Ilustración</span>
+              <span class="px-2 py-1 bg-gray-100 text-muga-text-secondary text-xs font-medium rounded-full">Illustrator</span>
+            </div>
+            <h3 class="text-lg font-semibold text-muga-text-primary mb-2">Ilustración Digital</h3>
+            <p class="text-muga-text-secondary text-sm mb-4">Serie de ilustraciones vectoriales para aplicación móvil con estilo minimalista y moderno.</p>
+            <button class="text-accent hover:text-accent/80 text-sm font-medium">Ver proyecto →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

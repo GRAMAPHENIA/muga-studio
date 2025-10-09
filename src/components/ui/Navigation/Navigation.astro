@@ -1,0 +1,194 @@
+---
+// Añadir interfaz de Props aunque no tenga propiedades
+export interface Props {
+  // Añadir slot para mobile-breadcrumb
+}
+
+// Definir interfaz para elementos de navegación
+interface NavItem {
+  label: string;
+  href: string;
+  icon?: string;
+}
+
+// Usar la interfaz para definir los elementos de navegación
+const navItems: NavItem[] = [
+  { label: "Portafolio", href: "/portafolio" },
+  { label: "Servicios", href: "/caracteristicas" },
+  { label: "Acerca de", href: "/nosotros" },
+  { label: "Contacto", href: "/contacto" },
+];
+
+const portfolioItem: NavItem = {
+  label: "Portafolio",
+  href: "/portafolio",
+  icon: "briefcase"
+};
+
+// Obtener la ruta actual para resaltar el enlace activo
+const currentPath = Astro.url.pathname;
+---
+
+<header id="navbar" class="fixed inset-x-0 top-0 z-50 transition-colors duration-300 navbar-scrolled">
+  <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8 h-[72px]">
+    <!-- Logo y Links desktop -->
+    <div class="flex items-center space-x-6">
+      <!-- Logo -->
+      <div class="flex items-center justify-start">
+        <a href="/">
+          <span class="sr-only">MUGA</span>
+          <img src="/favicon.svg" alt="" class="h-8 w-8 border border-accent/50 hover:border-accent transition-all duration-500 rounded-full border-dashed" />
+        </a>
+      </div>
+      
+      <!-- Mobile breadcrumb -->
+      <div class="flex lg:hidden ml-4">
+        <slot name="mobile-breadcrumb" />
+      </div>
+      
+      <!-- Links desktop -->
+      <div class="hidden lg:flex lg:gap-x-2 items-center ml-2">
+        <a href="/portafolio" class={`text-sm font-semibold ${currentPath === '/portafolio' ? 'text-muga-text-primary' : 'text-muga-text-secondary hover:text-muga-text-primary'}`}>Portafolio</a>
+        <a href="/caracteristicas" class={`text-sm font-semibold ${currentPath === '/caracteristicas' ? 'text-muga-text-primary' : 'text-muga-text-secondary hover:text-muga-text-primary'} ml-4`}>Servicios</a>
+        <a href="/nosotros" class={`text-sm font-semibold ${currentPath === '/nosotros' ? 'text-muga-text-primary' : 'text-muga-text-secondary hover:text-muga-text-primary'} ml-4`}>Acerca de</a>
+        <a href="/contacto" class={`text-sm font-semibold ${currentPath === '/contacto' ? 'text-muga-text-primary' : 'text-muga-text-secondary hover:text-muga-text-primary'} ml-4`}>Contacto</a>
+      </div>
+    </div>
+
+    <!-- Botón menú móvil -->
+    <div class="flex lg:hidden">
+      <button id="mobile-menu-button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-muga-text-secondary">
+        <span class="sr-only">Open main menu</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6" aria-hidden="true">
+          <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+      <a href="/contacto" class={`text-sm font-semibold ${currentPath === '/contacto' ? 'text-muga-text-primary' : 'text-muga-text-secondary hover:text-muga-text-primary'} flex items-center`}>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        Hablemos <span aria-hidden="true" class="ml-1">&rarr;</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Overlay menú mobile -->
+  <div id="mobile-menu" class="fixed inset-0 z-50 hidden lg:hidden bg-white/95 backdrop-blur-lg">
+    <div class="fixed inset-y-0 right-0 w-full sm:max-w-sm p-6 overflow-y-auto bg-white sm:ring-1 sm:ring-gray-200">
+      <!-- Header del menú -->
+      <div class="flex items-center justify-between">
+        <a href="/" class="-m-1.5 p-1.5">
+          <span class="sr-only">MUGA STUDIO</span>
+          <img src="/favicon.svg" alt="" class="h-8 w-auto" />
+        </a>
+        <button id="close-mobile-menu" class="-m-2.5 rounded-md p-2.5 text-muga-text-secondary">
+          <span class="sr-only">Close menu</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6" aria-hidden="true">
+            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Links -->
+      <div class="mt-6 flow-root">
+        <div class="-my-6 divide-y divide-gray-200">
+          <div class="space-y-2 py-6">
+            <a href="/portafolio" class="block rounded-lg px-3 py-2 text-base font-semibold text-muga-text-primary hover:bg-gray-50">Portafolio</a>
+            <a href="/caracteristicas" class="block rounded-lg px-3 py-2 text-base font-semibold text-muga-text-primary hover:bg-gray-50">Servicios</a>
+            <a href="/nosotros" class="block rounded-lg px-3 py-2 text-base font-semibold text-muga-text-primary hover:bg-gray-50">Acerca de</a>
+            <a href="/contacto" class="block rounded-lg px-3 py-2 text-base font-semibold text-muga-text-primary hover:bg-gray-50">Contacto</a>
+          </div>
+          <div class="py-6">
+            <a href="/contacto" class="flex items-center rounded-lg px-3 py-2.5 text-base font-semibold text-muga-text-primary hover:bg-gray-50">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+              Hablemos
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  /* Añadir espacio para el header fijo */
+  :global(body) {
+    padding-top: 112px; /* 72px (navbar) + 40px (breadcrumb) */
+  }
+
+  /* Clase para el fondo al hacer scroll */
+  .navbar-scrolled {
+    background-color: rgba(255, 255, 255, 0.95); 
+    backdrop-filter: blur(10px);
+    
+    border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+  }
+</style>
+
+<script is:inline define:vars={{ currentPath }}>
+  document.addEventListener('astro:page-load', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const closeMenuButton = document.getElementById('close-mobile-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const breadcrumb = document.getElementById('breadcrumb');
+    
+    // Función para manejar el scroll
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        breadcrumb?.classList.add('bg-white');
+        breadcrumb?.classList.add('shadow-md');
+      } else {
+        breadcrumb?.classList.remove('shadow-md');
+      }
+    };
+    
+    // Agregar evento de scroll
+    window.addEventListener('scroll', handleScroll);
+    
+    mobileMenuButton?.addEventListener('click', () => {
+      mobileMenu?.classList.remove('hidden');
+    });
+    
+    closeMenuButton?.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+    
+    const mobileLinks = mobileMenu?.querySelectorAll('a');
+    mobileLinks?.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu?.classList.add('hidden');
+      });
+    });
+  });
+
+  // Para la carga inicial
+  document.addEventListener('DOMContentLoaded', () => {
+    if (!document.querySelector('html').hasAttribute('data-astro-transition')) {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const closeMenuButton = document.getElementById('close-mobile-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton?.addEventListener('click', () => {
+        mobileMenu?.classList.remove('hidden');
+      });
+      
+      closeMenuButton?.addEventListener('click', () => {
+        mobileMenu?.classList.add('hidden');
+      });
+      
+      const mobileLinks = mobileMenu?.querySelectorAll('a');
+      mobileLinks?.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu?.classList.add('hidden');
+        });
+      });
+    }
+  });
+</script>
+
+

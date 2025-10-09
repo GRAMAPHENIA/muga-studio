@@ -1,0 +1,332 @@
+---
+import BentoCell from "../ui/BentoCell.astro";
+import IconWithBlurEffect from "../ui/IconWithBlurEffect.astro";
+import ArrowLink from "../ui/Button/ArrowLink.astro";
+---
+
+<section class="relative px-6 lg:px-8">
+  <!-- Grid principal -->
+  <div class="mx-auto max-w-7xl">
+    <div
+      class="grid grid-cols-1 md:grid-cols-4 gap-0 auto-rows-[minmax(200px,auto)]"
+    >
+      <!-- Fila 1: 1fr, 1fr, 2fr -->
+      <BentoCell
+        title="Stack Tecnológico"
+        colSpan="col-span-1 md:col-span-1"
+        bgClass="bg-transparent"
+        borderClass="border-white/5"
+        rounded={false}
+        lightEffect={true}
+      >
+        <IconWithBlurEffect 
+          iconPath="/icons/layers.svg"
+          iconAlt="Icono de Stack Tecnológico"
+          iconId="stack"
+        />
+
+        <ul class="space-y-2 text-muga-neutral relative z-10">
+          <li class="flex items-start">
+            <span class="text-muga-primary mr-2">•</span>
+            <span
+              ><strong class="text-graylight">Astro:</strong> generación estática optimizada.</span
+            >
+          </li>
+          <li class="flex items-start">
+            <span class="text-muga-primary mr-2">•</span>
+            <span
+              ><strong class="text-graylight">TailwindCSS:</strong> estilos consistentes.</span
+            >
+          </li>
+          <li class="flex items-start">
+            <span class="text-muga-primary mr-2">•</span>
+            <span
+              ><strong class="text-graylight">TypeScript:</strong> código seguro.</span
+            >
+          </li>
+          <li class="flex items-start">
+            <span class="text-muga-primary mr-2">•</span>
+            <span
+              ><strong class="text-graylight">Hostinger:</strong> hosting confiable.</span
+            >
+          </li>
+        </ul>
+      </BentoCell>
+
+      <BentoCell
+        title="Cliente Ideal"
+        colSpan="col-span-1 md:col-span-1"
+        bgClass="bg-transparent"
+        borderClass="border-white/5"
+        rounded={false}
+        lightEffect={true}
+      >
+        <IconWithBlurEffect 
+          iconPath="/icons/shield-user.svg"
+          iconAlt="Icono de Cliente Ideal"
+          iconId="cliente"
+        />
+
+        <ul class="space-y-2 text-muga-neutral relative z-10">
+          <li class="flex items-start">
+            <span class="text-muga-primary mr-2">•</span>
+            <span>Startups: lanzamiento rápido, bajo costo.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-muga-primary mr-2">•</span>
+            <span>Pymes corporativas: imagen profesional.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-muga-primary mr-2">•</span>
+            <span>Agencias aliadas: desarrollo en Astro.</span>
+          </li>
+        </ul>
+      </BentoCell>
+
+      <BentoCell
+        title="Nuestro Enfoque"
+        colSpan="col-span-1 md:col-span-2"
+        bgClass="bg-transparent"
+        borderClass="border-white/5"
+        rounded={false}
+        lightEffect={true}
+      >
+        <IconWithBlurEffect 
+          iconPath="/icons/drafting-compass.svg"
+          iconAlt="Icono de Nuestro Enfoque"
+          iconId="enfoque"
+        />
+
+        <div class="relative z-10">
+          <p class="text-muga-neutral">
+            Desarrollamos sitios web y aplicaciones modulares, rápidos y
+            escalables, basados en un sistema de diseño propio. Nuestra filosofía
+            se centra en la transparencia, eficiencia y KPIs medibles como
+            estándar de calidad.
+          </p>
+          <p class="mt-4 text-muga-neutral">
+            Cada proyecto se construye con componentes reutilizables que
+            garantizan consistencia visual y funcional, optimizando tanto la
+            experiencia de desarrollo como el rendimiento final para el usuario.
+          </p>
+        </div>
+      </BentoCell>
+
+      <!-- Fila 2: 1fr, 2fr, 1fr -->
+      <BentoCell
+        title="Checklist Transparente"
+        colSpan="col-span-1 md:col-span-1"
+        bgClass="bg-transparent"
+        borderClass="border-white/5"
+        rounded={false}
+        lightEffect={true}
+      >
+        <IconWithBlurEffect 
+          iconPath="/icons/list-checks.svg"
+          iconAlt="Icono de Checklist Transparente"
+          iconId="checklist"
+        />
+
+        <ul class="space-y-2 text-muga-neutral relative z-10">
+          <li class="flex items-start">
+            <span class="text-muga-primary mr-2">•</span>
+            <span>KPIs de rendimiento incluidos.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-muga-primary mr-2">•</span>
+            <span>Accesibilidad auditada (AA).</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-muga-primary mr-2">•</span>
+            <span>Informe final de métricas.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-muga-primary mr-2">•</span>
+            <span>Hosting configurado.</span>
+          </li>
+        </ul>
+      </BentoCell>
+
+      <BentoCell
+        title="Métricas de Calidad"
+        colSpan="col-span-1 md:col-span-2"
+        bgClass="bg-transparent"
+        borderClass="border-white/5"
+        rounded={false}
+        lightEffect={true}
+      >
+        <div class="relative z-10">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-white/10">
+                <th class="py-2 text-left text-muga-neutral">Métrica</th>
+                <th class="py-2 text-left text-muga-neutral">Descripción</th>
+                <th class="py-2 text-left text-muga-neutral">Objetivo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-white/10">
+                <td class="py-2 pr-4 text-muga-neutral">Velocidad (LCP)</td>
+                <td class="py-2 pr-4 text-muga-neutral">Largest Contentful Paint</td>
+                <td class="py-2 font-semibold text-muga-primary">≤ 2.5s</td>
+              </tr>
+              <tr class="border-b border-white/10">
+                <td class="py-2 pr-4 text-muga-neutral">Estabilidad (CLS)</td>
+                <td class="py-2 pr-4 text-muga-neutral">Cumulative Layout Shift</td>
+                <td class="py-2 font-semibold text-muga-primary">≤ 0.1</td>
+              </tr>
+              <tr class="border-b border-white/10">
+                <td class="py-2 pr-4 text-muga-neutral">Interactividad (INP)</td>
+                <td class="py-2 pr-4 text-muga-neutral">Interaction to Next Paint</td>
+                <td class="py-2 font-semibold text-muga-primary">≤ 200ms</td>
+              </tr>
+              <tr class="border-b border-white/10">
+                <td class="py-2 pr-4 text-muga-neutral">Accesibilidad</td>
+                <td class="py-2 pr-4 text-muga-neutral">Lighthouse / WCAG AA</td>
+                <td class="py-2 font-semibold text-muga-primary">≥ 90/100</td>
+              </tr>
+              <tr>
+                <td class="py-2 pr-4 text-muga-neutral">SEO / Indexación</td>
+                <td class="py-2 pr-4 text-muga-neutral">Páginas indexadas</td>
+                <td class="py-2 font-semibold text-muga-primary">≥ 95%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </BentoCell>
+
+      <BentoCell
+        title="Beneficios"
+        colSpan="col-span-1 md:col-span-1"
+        bgClass="bg-transparent"
+        borderClass="border-white/5"
+        rounded={false}
+        lightEffect={true}
+      >
+        <IconWithBlurEffect 
+          iconPath="/icons/badge-check.svg"
+          iconAlt="Icono de Beneficios"
+          iconId="beneficios"
+        />
+        
+        <ul class="space-y-2 text-muga-neutral">
+          <li class="flex items-start">
+            <span class="text-muga-primary mr-2">•</span>
+            <span>Rendimiento optimizado</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-muga-primary mr-2">•</span>
+            <span>Escalabilidad garantizada</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-muga-primary mr-2">•</span>
+            <span>Mantenimiento simplificado</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-muga-primary mr-2">•</span>
+            <span>Métricas transparentes</span>
+          </li>
+        </ul>
+      </BentoCell>
+
+      <!-- Fila 3: 2fr, 1fr, 1fr -->
+      <BentoCell
+        title="Filosofía de Trabajo"
+        colSpan="col-span-1 md:col-span-2"
+        bgClass="bg-transparent"
+        borderClass="border-white/5"
+        lightEffect={true}
+      >
+        <IconWithBlurEffect 
+          iconPath="/icons/brain-cog.svg"
+          iconAlt="Icono de Filosofía de Trabajo"
+          iconId="filosofia"
+        />
+        
+        <p class="text-muga-neutral">
+          Nuestro modelo de negocio se basa en la transparencia y el compromiso
+          técnico. Cada proyecto incluye métricas claras y medibles que
+          garantizan el cumplimiento de los estándares de calidad.
+        </p>
+        <p class="mt-4 text-muga-neutral">
+          Trabajamos con un enfoque modular que permite adaptarnos a las
+          necesidades específicas de cada cliente, ofreciendo soluciones
+          escalables que crecen con su negocio.
+        </p>
+      </BentoCell>
+
+      <BentoCell
+        title="Tecnologías Adicionales"
+        colSpan="col-span-1 md:col-span-1"
+        bgClass="bg-transparent"
+        borderClass="border-white/5"
+        rounded={false}
+        lightEffect={true}
+      >
+        <IconWithBlurEffect 
+          iconPath="/icons/package-plus.svg"
+          iconAlt="Icono de Tecnologías Adicionales"
+          iconId="tecnologias"
+        />
+
+        <ul class="space-y-2 text-muga-neutral relative z-10">
+          <li class="flex items-start">
+            <span class="text-muga-primary mr-2">•</span>
+            <span>React: componentes interactivos</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-muga-primary mr-2">•</span>
+            <span>Strapi: CMS headless</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-muga-primary mr-2">•</span>
+            <span>Supabase: base de datos</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-muga-primary mr-2">•</span>
+            <span>Cloudflare: CDN global</span>
+          </li>
+        </ul>
+      </BentoCell>
+
+      <BentoCell
+        title="Contacto"
+        colSpan="col-span-1 md:col-span-1"
+        bgClass="bg-transparent"
+        borderClass="border-white/5"
+        rounded={false}
+        lightEffect={true}
+      >
+        <IconWithBlurEffect 
+          iconPath="/icons/message-square-text.svg"
+          iconAlt="Icono de Contacto"
+          iconId="contacto"
+        />
+        
+        <div class="flex flex-col space-y-4 relative z-10">
+          <ArrowLink 
+            href="/contacto" 
+            text="Agendar llamada" 
+          />
+          <ArrowLink 
+            href="#" 
+            text="Ver portafolio" 
+          />
+        </div>
+      </BentoCell>
+    </div>
+  </div>
+</section>
+
+<style>
+  .arrow-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  a:hover .arrow-icon {
+    transform: translateX(4px);
+  }
+</style>
+
+<script src="../../scripts/bento-grid.ts"></script>

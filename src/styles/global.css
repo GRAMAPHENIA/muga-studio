@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  /* Paleta MUGA STUDIO - Light Mode */
+  --color-accent: #FF5353;
+  --color-accentmd: #FF7A7A;
+  --color-accentxs: #FFE5E5;
+  --color-obscure: #FFFFFF;
+  --color-mugagray: #F8F9FA;
+  --color-graylight: #6B7280;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-obscure);
+    color: #111827;
+    font-family: system-ui, sans-serif;
+  }
+}
+
+/* Añadir al inicio del archivo */
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}

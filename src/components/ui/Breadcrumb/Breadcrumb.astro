@@ -1,0 +1,86 @@
+---
+import type { BreadcrumbItem } from "../../../types";
+
+export interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<!-- Versión desktop del breadcrumb -->
+<nav id="breadcrumb" aria-label="Breadcrumb" class="fixed top-[72px] left-0 right-0 z-40 px-6 lg:px-8 h-[40px] hidden md:flex items-center m-0 bg-white transition-all duration-300 border-b border-transparent">
+  <ol class="flex items-center space-x-2 text-sm">
+    <li>
+      <a href="/" class="text-muga-text-secondary hover:text-muga-text-primary">Inicio</a>
+    </li>
+    {
+      items.map((item, index) => (
+        <li class="flex items-center">
+          <span class="mx-2 text-muga-text-secondary">/</span>
+          <a
+            href={item.href}
+            class={`${
+              item.active ? "text-muga-text-primary font-medium" : "text-muga-text-secondary hover:text-muga-text-primary"
+            }`}
+            aria-current={item.active ? "page" : undefined}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+
+<!-- Versión móvil del breadcrumb (se usará en Navigation.astro) -->
+<div id="mobile-breadcrumb" class="md:hidden">
+  <ol class="flex items-center space-x-1 text-xs">
+    <li>
+      <a href="/" class="text-muga-text-secondary hover:text-muga-text-primary truncate max-w-[40px]">Inicio</a>
+    </li>
+    {
+      items.map((item, index) => (
+        <li class="flex items-center">
+          <span class="mx-1 text-muga-text-secondary">/</span>
+          <a
+            href={item.href}
+            class={`${
+              item.active ? "text-muga-text-primary font-medium" : "text-muga-text-secondary hover:text-muga-text-primary"
+            } truncate max-w-[80px]`}
+            aria-current={item.active ? "page" : undefined}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))
+    }
+  </ol>
+</div>
+
+<style>
+  #breadcrumb.scrolled {
+    border-color: rgba(229, 231, 235, 0.8);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  }
+</style>
+
+<script>
+  // Solo aplicar efectos de scroll en desktop
+  if (window.innerWidth >= 768) {
+    const breadcrumb = document.getElementById('breadcrumb');
+    
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        breadcrumb?.classList.add('scrolled');
+      } else {
+        breadcrumb?.classList.remove('scrolled');
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    
+    // Verificar el estado inicial
+    handleScroll();
+  }
+</script>

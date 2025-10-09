@@ -1,0 +1,287 @@
+---
+import PageHeroSection from "../components/HeroSection/PageHeroSection.astro";
+import IconWithBlurEffect from "../components/ui/IconWithBlurEffect.astro";
+import ArrowLink from "../components/ui/Button/ArrowLink.astro";
+
+import Navigation from "../components/ui/Navigation/Navigation.astro";
+import Layout from "../layouts/layout.astro";
+import "../styles/bento.css";
+---
+
+<Layout
+  title="MUGA STUDIO - Portafolio de Diseño Gráfico y Audiovisual"
+  description="Portafolio profesional especializado en Photoshop, Illustrator, Premiere Pro y After Effects. Showcasing de proyectos creativos y habilidades técnicas."
+>
+  <Navigation />
+  <PageHeroSection
+    title="Creatividad visual sin límites"
+    description="Portafolio especializado en diseño gráfico y producción audiovisual con Adobe Creative Suite."
+    showBadge={true}
+    badgeText="Portafolio"
+    badgeLink="/portafolio"
+    primaryButtonText="Ver trabajos"
+    primaryButtonLink="/portafolio"
+    secondaryButtonText="Contactar"
+    secondaryButtonLink="/contacto"
+  />
+
+  <!-- Sección de Características Principales -->
+  <section class="relative px-6 lg:px-8 py-16">
+    <div class="mx-auto max-w-7xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-semibold tracking-tight text-muga-text-primary sm:text-4xl mb-4">
+          Especialidades Creativas
+        </h2>
+        <p class="text-lg text-muga-text-secondary max-w-2xl mx-auto">
+          Dominio técnico en las herramientas más avanzadas de Adobe Creative Suite
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Photoshop -->
+        <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <IconWithBlurEffect
+            iconPath="/icons/chart-no-axes-combined.svg"
+            iconAlt="Icono de Photoshop"
+            iconId="photoshop"
+          />
+          <h3 class="text-xl font-semibold text-muga-text-primary mb-3">Photoshop</h3>
+          <p class="text-muga-text-secondary">Retoque fotográfico, composición digital y manipulación de imágenes profesional.</p>
+        </div>
+
+        <!-- Illustrator -->
+        <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <IconWithBlurEffect
+            iconPath="/icons/component.svg"
+            iconAlt="Icono de Illustrator"
+            iconId="illustrator"
+          />
+          <h3 class="text-xl font-semibold text-muga-text-primary mb-3">Illustrator</h3>
+          <p class="text-muga-text-secondary">Ilustración vectorial, branding y diseño de logotipos con precisión técnica.</p>
+        </div>
+
+        <!-- Premiere Pro -->
+        <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <IconWithBlurEffect
+            iconPath="/icons/shield-user.svg"
+            iconAlt="Icono de Premiere"
+            iconId="premiere"
+          />
+          <h3 class="text-xl font-semibold text-muga-text-primary mb-3">Premiere Pro</h3>
+          <p class="text-muga-text-secondary">Edición de video profesional, montaje y post-producción audiovisual.</p>
+        </div>
+
+        <!-- After Effects -->
+        <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+          <IconWithBlurEffect
+            iconPath="/icons/component.svg"
+            iconAlt="Icono de After Effects"
+            iconId="aftereffects"
+          />
+          <h3 class="text-xl font-semibold text-muga-text-primary mb-3">After Effects</h3>
+          <p class="text-muga-text-secondary">Motion graphics, animaciones y efectos visuales cinematográficos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Trabajos Destacados -->
+  <section class="relative px-6 lg:px-8 py-16 bg-muga-light-100">
+    <div class="mx-auto max-w-7xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-semibold tracking-tight text-muga-text-primary sm:text-4xl mb-4">
+          Trabajos Destacados
+        </h2>
+        <p class="text-lg text-muga-text-secondary max-w-2xl mx-auto">
+          Una selección de proyectos que demuestran versatilidad y calidad técnica
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Proyecto 1: Diseño Gráfico -->
+        <div class="flex flex-col items-center bg-white border border-gray-200 px-6 py-6 rounded-xl shadow-sm">
+          <img src="/products/edge.webp" alt="Proyecto de Diseño Gráfico" class="w-full h-48 object-cover mb-4 border border-gray-200 rounded-lg" />
+          <h3 class="text-xl font-semibold text-muga-text-primary mb-2 tracking-tight">Identidad Visual Corporativa</h3>
+          <p class="mb-6 text-center text-muga-text-secondary">Branding completo desarrollado en Illustrator y Photoshop.</p>
+          <div class="w-full flex justify-center mt-auto">
+            <a href="/portafolio" class="inline-flex items-center gap-2 px-4 py-2 text-accent border border-accent hover:bg-accent hover:text-white transition font-medium uppercase mb-2">Ver proyecto <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+
+        <!-- Proyecto 2: Video -->
+        <div class="flex flex-col items-center bg-white border border-gray-200 px-6 py-6 rounded-xl shadow-sm">
+          <img src="/products/spark.webp" alt="Proyecto Audiovisual" class="w-full h-48 object-cover mb-4 border border-gray-200 rounded-lg" />
+          <h3 class="text-xl font-semibold text-muga-text-primary mb-2 tracking-tight">Motion Graphics</h3>
+          <p class="mb-6 text-center text-muga-text-secondary">Animación corporativa creada con After Effects y Premiere.</p>
+          <div class="w-full flex justify-center mt-auto">
+            <a href="/portafolio" class="inline-flex items-center gap-2 px-4 py-2 text-accent border border-accent hover:bg-accent hover:text-white transition font-medium uppercase mb-2">Ver proyecto <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <ArrowLink href="/portafolio" text="Ver portafolio completo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección CTA con Formulario -->
+  <section class="relative px-6 lg:px-8 py-16">
+    <div class="mx-auto max-w-4xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-semibold tracking-tight text-muga-text-primary sm:text-4xl mb-4">
+          ¿Necesitas un proyecto creativo?
+        </h2>
+        <p class="text-lg text-muga-text-secondary max-w-2xl mx-auto mb-8">
+          Cuéntame sobre tu idea y exploremos cómo darle vida con diseño gráfico o producción audiovisual
+        </p>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+        <!-- Mensajes de estado del formulario -->
+        <div id="form-messages" class="mb-6 hidden">
+          <div id="success-message" class="hidden bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-md">
+            ¡Mensaje enviado exitosamente! Me pondré en contacto pronto.
+          </div>
+          <div id="error-message" class="hidden bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-md">
+            Error al enviar el mensaje. Por favor, intenta de nuevo.
+          </div>
+        </div>
+
+        <form id="contact-form" method="POST" action="https://formspree.io/f/mnngbqnb" class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-muga-text-primary mb-2">Nombre</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="w-full px-3 py-2 bg-muga-light-50 border border-gray-300 rounded-md text-muga-text-primary placeholder-muga-text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                placeholder="Tu nombre"
+                required
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-muga-text-primary mb-2">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="w-full px-3 py-2 bg-muga-light-50 border border-gray-300 rounded-md text-muga-text-primary placeholder-muga-text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                placeholder="tu@email.com"
+                required
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="project" class="block text-sm font-medium text-muga-text-primary mb-2">Tipo de proyecto</label>
+            <select
+              id="project"
+              name="project"
+              class="w-full px-3 py-2 bg-muga-light-50 border border-gray-300 rounded-md text-muga-text-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+              required
+            >
+              <option value="">Selecciona una opción</option>
+              <option value="diseno-grafico">Diseño Gráfico</option>
+              <option value="branding">Branding e Identidad</option>
+              <option value="video-edicion">Edición de Video</option>
+              <option value="motion-graphics">Motion Graphics</option>
+              <option value="retoque-fotografico">Retoque Fotográfico</option>
+              <option value="proyecto-mixto">Proyecto Mixto</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-muga-text-primary mb-2">Mensaje</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              class="w-full px-3 py-2 bg-muga-light-50 border border-gray-300 rounded-md text-muga-text-primary placeholder-muga-text-secondary focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+              placeholder="Cuéntame sobre tu proyecto creativo..."
+            ></textarea>
+          </div>
+
+          <div class="text-center">
+            <button
+              type="submit"
+              id="submit-btn"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-semibold rounded-md hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-white transition disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <span id="btn-text">Enviar consulta</span>
+              <span id="btn-arrow" aria-hidden="true">→</span>
+              <div id="btn-spinner" class="hidden animate-spin rounded-full h-4 w-4 border-b-2 border-white" aria-hidden="true"></div>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script src="../scripts/bento-grid.ts"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+    const btnText = document.getElementById('btn-text') as HTMLSpanElement;
+    const btnArrow = document.getElementById('btn-arrow') as HTMLSpanElement;
+    const btnSpinner = document.getElementById('btn-spinner') as HTMLDivElement;
+    const formMessages = document.getElementById('form-messages') as HTMLDivElement;
+    const successMessage = document.getElementById('success-message') as HTMLDivElement;
+    const errorMessage = document.getElementById('error-message') as HTMLDivElement;
+
+    if (!form || !submitBtn || !btnText || !btnArrow || !btnSpinner || !formMessages || !successMessage || !errorMessage) {
+      console.error('No se encontraron todos los elementos del formulario');
+      return;
+    }
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      // Mostrar loading state
+      submitBtn.disabled = true;
+      btnText.textContent = 'Enviando...';
+      btnArrow.classList.add('hidden');
+      btnSpinner.classList.remove('hidden');
+
+      // Ocultar mensajes anteriores
+      formMessages.classList.add('hidden');
+      successMessage.classList.add('hidden');
+      errorMessage.classList.add('hidden');
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          // Éxito
+          formMessages.classList.remove('hidden');
+          successMessage.classList.remove('hidden');
+          form.reset();
+        } else {
+          throw new Error('Error en el envío');
+        }
+      } catch (error) {
+        // Error
+        formMessages.classList.remove('hidden');
+        errorMessage.classList.remove('hidden');
+      } finally {
+        // Restaurar estado del botón
+        submitBtn.disabled = false;
+        btnText.textContent = 'Enviar consulta';
+        btnArrow.classList.remove('hidden');
+        btnSpinner.classList.add('hidden');
+      }
+    });
+  });
+</script>

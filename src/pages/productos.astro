@@ -1,0 +1,126 @@
+---
+import Navigation from "../components/ui/Navigation/Navigation.astro";
+import Breadcrumb from "../components/ui/Breadcrumb/Breadcrumb.astro";
+import Layout from "../layouts/layout.astro";
+import PageHeroSection from "../components/HeroSection/PageHeroSection.astro";
+import type { BreadcrumbItem } from "../types";
+
+const breadcrumbItems: BreadcrumbItem[] = [
+  {
+    label: "Proyectos",
+    href: "/productos",
+    active: true,
+  },
+];
+---
+
+<Layout
+  title="Proyectos Destacados | MUGA STUDIO"
+  description="Proyectos destacados de diseño gráfico y producción audiovisual"
+>
+  <Navigation>
+    <Breadcrumb items={breadcrumbItems} />
+  </Navigation>
+  <div class="hidden lg:block">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
+  <PageHeroSection 
+    title="Proyectos Destacados"
+    description="Una selección de trabajos que demuestran la versatilidad y calidad técnica en diferentes disciplinas creativas."
+    textAlign="left"
+    showBadge={true}
+    badgeText="Destacados"
+  />
+  
+  <!-- Sección de Proyectos -->
+  <section class="relative px-6 lg:px-8 py-16">
+    <div class="mx-auto max-w-7xl">
+      <!-- Nota informativa -->
+      <div class="bg-muga-light-100 border border-gray-200 rounded-xl p-6 mb-12 text-center">
+        <h2 class="text-xl font-semibold text-muga-text-primary mb-3">
+          Portafolio en Construcción
+        </h2>
+        <p class="text-muga-text-secondary mb-4">
+          Actualmente estoy preparando una selección curada de mis mejores trabajos en diseño gráfico y producción audiovisual. 
+          Mientras tanto, puedes explorar algunos proyectos web que demuestran mi enfoque técnico y atención al detalle.
+        </p>
+        <a href="/contacto" class="inline-flex items-center gap-2 px-4 py-2 text-accent hover:text-accent/80 font-medium">
+          Consultar sobre proyectos específicos
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <!-- Proyectos Web (temporales) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <!-- Proyecto 1: Landing Page -->
+        <div class="flex flex-col items-center bg-white border border-gray-200 px-6 py-6 rounded-xl shadow-sm">
+          <img src="/products/edge.webp" alt="Landing Page Moderna" class="w-full h-48 object-cover mb-4 border border-gray-200 rounded-lg" />
+          <h2 class="text-xl font-semibold text-muga-text-primary mb-2 tracking-tight">Landing Page Moderna</h2>
+          <p class="mb-6 text-center text-muga-text-secondary">Ejemplo de diseño web limpio y funcional con enfoque en conversión y experiencia de usuario.</p>
+          <div class="w-full flex justify-center mt-auto">
+            <a href="https://mugaland.vercel.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 text-accent border border-accent hover:bg-accent hover:text-white transition font-medium uppercase mb-2">Ver demo <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        
+        <!-- Proyecto 2: Corporativo Astro -->
+        <div class="flex flex-col items-center bg-white border border-gray-200 px-6 py-6 rounded-xl shadow-sm">
+          <img src="/products/spark.webp" alt="Sitio Corporativo" class="w-full h-48 object-cover mb-4 border border-gray-200 rounded-lg" />
+          <h2 class="text-xl font-semibold text-muga-text-primary mb-2 tracking-tight">Sitio Corporativo</h2>
+          <p class="mb-6 text-center text-muga-text-secondary">Desarrollo web profesional con arquitectura moderna, optimizado para rendimiento y SEO.</p>
+          <div class="w-full flex justify-center mt-auto">
+            <a href="https://corporativo-astro.vercel.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 text-accent border border-accent hover:bg-accent hover:text-white transition font-medium uppercase mb-2">Ver demo <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Próximos Proyectos -->
+      <div class="text-center">
+        <h2 class="text-2xl font-semibold text-muga-text-primary mb-6">
+          Próximamente
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm">
+            <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="font-semibold text-muga-text-primary mb-2">Proyectos de Branding</h3>
+            <p class="text-sm text-muga-text-secondary">Identidades visuales completas desarrolladas en Illustrator</p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm">
+            <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="font-semibold text-muga-text-primary mb-2">Motion Graphics</h3>
+            <p class="text-sm text-muga-text-secondary">Animaciones y efectos visuales creados en After Effects</p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm">
+            <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="font-semibold text-muga-text-primary mb-2">Retoque Fotográfico</h3>
+            <p class="text-sm text-muga-text-secondary">Trabajos avanzados de composición y manipulación en Photoshop</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/portafolio" class="inline-flex items-center gap-2 px-6 py-3 border border-accent text-accent hover:bg-accent hover:text-white transition font-medium rounded-md">
+            Ver portafolio completo
+            <span aria-hidden="true">→</span>
+          </a>
+          <a href="/contacto" class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white hover:bg-accent/90 transition font-medium rounded-md">
+            Solicitar proyecto
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
