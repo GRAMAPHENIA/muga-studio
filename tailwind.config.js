@@ -11,7 +11,7 @@ export default {
         'obscure': '#FFFFFF',
         'mugagray': '#F8F9FA',
         'graylight': '#6B7280',
-        
+
         // Colores para uso en componentes
         'muga': {
           'primary': '#FF5353',
@@ -26,7 +26,18 @@ export default {
             'secondary': '#6B7280',
           }
         }
-      }
+      },
+      borderRadius: {
+        none: '0',
+        sm: '0',
+        DEFAULT: '0',
+        md: '0',
+        lg: '0',
+        xl: '0',
+        '2xl': '0',
+        '3xl': '0',
+        full: '0',
+      },
     },
   },
   plugins: [],

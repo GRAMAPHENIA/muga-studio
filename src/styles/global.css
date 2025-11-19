@@ -8,6 +8,17 @@
   --color-obscure: #FFFFFF;
   --color-mugagray: #F8F9FA;
   --color-graylight: #6B7280;
+
+  /* Border radius 0 para todos */
+  --radius-none: 0px;
+  --radius-sm: 0px;
+  --radius: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-full: 0px;
 }
 
 @layer base {
