@@ -74,46 +74,46 @@ const currentPath = Astro.url.pathname;
       </a>
     </div>
   </nav>
+</header>
 
-  <!-- Overlay menú mobile -->
-  <div id="mobile-menu" class="fixed inset-0 z-50 hidden lg:hidden bg-white/95 backdrop-blur-lg">
-    <div class="fixed inset-y-0 right-0 w-full sm:max-w-sm p-6 overflow-y-auto bg-white sm:ring-1 sm:ring-gray-200">
-      <!-- Header del menú -->
-      <div class="flex items-center justify-between">
-        <a href="/" class="-m-1.5 p-1.5">
-          <span class="sr-only">MUGA STUDIO</span>
-          <img src="/favicon.svg" alt="" class="h-8 w-auto" />
-        </a>
-        <button id="close-mobile-menu" class="-m-2.5 rounded-md p-2.5 text-muga-text-secondary">
-          <span class="sr-only">Close menu</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6" aria-hidden="true">
-            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-      </div>
+<!-- Overlay menú mobile -->
+<div id="mobile-menu" class="fixed inset-0 z-50 hidden bg-white/55 backdrop-blur-lg">
+  <div class="fixed inset-y-0 right-0 w-full sm:max-w-sm p-6 overflow-y-auto bg-white sm:ring-1 sm:ring-gray-200">
+    <!-- Header del menú -->
+    <div class="flex items-center justify-between">
+      <a href="/" class="-m-1.5 p-1.5">
+        <span class="sr-only">MUGA STUDIO</span>
+        <img src="/favicon.svg" alt="" class="h-8 w-auto" />
+      </a>
+      <button id="close-mobile-menu" class="-m-2.5 rounded-md p-2.5 text-muga-text-secondary">
+        <span class="sr-only">Close menu</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-6" aria-hidden="true">
+          <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
 
-      <!-- Links -->
-      <div class="mt-6 flow-root">
-        <div class="-my-6 divide-y divide-gray-200">
-          <div class="space-y-2 py-6">
-            <a href="/portafolio" class="block rounded-lg px-3 py-2 text-base font-semibold text-muga-text-primary hover:bg-gray-50">Portafolio</a>
-            <a href="/caracteristicas" class="block rounded-lg px-3 py-2 text-base font-semibold text-muga-text-primary hover:bg-gray-50">Servicios</a>
-            <a href="/nosotros" class="block rounded-lg px-3 py-2 text-base font-semibold text-muga-text-primary hover:bg-gray-50">Acerca de</a>
-            <a href="/contacto" class="block rounded-lg px-3 py-2 text-base font-semibold text-muga-text-primary hover:bg-gray-50">Contacto</a>
-          </div>
-          <div class="py-6">
-            <a href="/contacto" class="flex items-center rounded-lg px-3 py-2.5 text-base font-semibold text-muga-text-primary hover:bg-gray-50">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-              </svg>
-              Hablemos
-            </a>
-          </div>
+    <!-- Links -->
+    <div class="mt-6 flow-root">
+      <div class="-my-6 divide-y divide-gray-200">
+        <div class="space-y-2 py-6">
+          <a href="/portafolio" class="block rounded-lg px-3 py-2 text-base font-semibold text-muga-text-primary hover:bg-gray-50">Portafolio</a>
+          <a href="/caracteristicas" class="block rounded-lg px-3 py-2 text-base font-semibold text-muga-text-primary hover:bg-gray-50">Servicios</a>
+          <a href="/nosotros" class="block rounded-lg px-3 py-2 text-base font-semibold text-muga-text-primary hover:bg-gray-50">Acerca de</a>
+          <a href="/contacto" class="block rounded-lg px-3 py-2 text-base font-semibold text-muga-text-primary hover:bg-gray-50">Contacto</a>
+        </div>
+        <div class="py-6">
+          <a href="/contacto" class="flex items-center rounded-lg px-3 py-2.5 text-base font-semibold text-muga-text-primary hover:bg-gray-50">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            Hablemos
+          </a>
         </div>
       </div>
     </div>
   </div>
-</header>
+</div>
 
 <style>
   /* Añadir espacio para el header fijo */
@@ -130,13 +130,13 @@ const currentPath = Astro.url.pathname;
   }
 </style>
 
-<script is:inline define:vars={{ currentPath }}>
-  document.addEventListener('astro:page-load', () => {
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const closeMenuButton = document.getElementById('close-mobile-menu');
     const mobileMenu = document.getElementById('mobile-menu');
     const breadcrumb = document.getElementById('breadcrumb');
-    
+
     // Función para manejar el scroll
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -146,48 +146,24 @@ const currentPath = Astro.url.pathname;
         breadcrumb?.classList.remove('shadow-md');
       }
     };
-    
+
     // Agregar evento de scroll
     window.addEventListener('scroll', handleScroll);
-    
+
     mobileMenuButton?.addEventListener('click', () => {
       mobileMenu?.classList.remove('hidden');
     });
-    
+
     closeMenuButton?.addEventListener('click', () => {
       mobileMenu?.classList.add('hidden');
     });
-    
+
     const mobileLinks = mobileMenu?.querySelectorAll('a');
     mobileLinks?.forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu?.classList.add('hidden');
       });
     });
-  });
-
-  // Para la carga inicial
-  document.addEventListener('DOMContentLoaded', () => {
-    if (!document.querySelector('html').hasAttribute('data-astro-transition')) {
-      const mobileMenuButton = document.getElementById('mobile-menu-button');
-      const closeMenuButton = document.getElementById('close-mobile-menu');
-      const mobileMenu = document.getElementById('mobile-menu');
-      
-      mobileMenuButton?.addEventListener('click', () => {
-        mobileMenu?.classList.remove('hidden');
-      });
-      
-      closeMenuButton?.addEventListener('click', () => {
-        mobileMenu?.classList.add('hidden');
-      });
-      
-      const mobileLinks = mobileMenu?.querySelectorAll('a');
-      mobileLinks?.forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu?.classList.add('hidden');
-        });
-      });
-    }
   });
 </script>
 
