@@ -4,60 +4,30 @@ import ArrowLink from "../Button/ArrowLink.astro";
 export interface Props {}
 ---
 
-<footer class="bg-muga-light-100 border-t border-gray-200 py-8 mt-16">
+<footer class="bg-muga-dark-800/50 py-8 mt-16">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-      <!-- Información del Studio -->
-      <div>
-        <h3 class="font-semibold text-muga-text-primary mb-4">MUGA STUDIO</h3>
-        <p class="text-sm text-muga-text-secondary mb-4">
-          Especialización en diseño gráfico y producción audiovisual con Adobe Creative Suite.
-        </p>
-        <div class="flex items-center space-x-4">
-          <img src="/favicon.svg" alt="MUGA STUDIO" class="h-8 w-8 border border-accent/50 rounded-full border-dashed" />
-          <span class="text-sm text-muga-text-secondary">Creatividad visual sin límites</span>
-        </div>
-      </div>
-
-      <!-- Enlaces Rápidos -->
-      <div>
-        <h3 class="font-semibold text-muga-text-primary mb-4">Enlaces</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/portafolio" class="text-muga-text-secondary hover:text-accent transition">Portafolio</a></li>
-          <li><a href="/caracteristicas" class="text-muga-text-secondary hover:text-accent transition">Servicios</a></li>
-          <li><a href="/nosotros" class="text-muga-text-secondary hover:text-accent transition">Acerca de</a></li>
-          <li><a href="/contacto" class="text-muga-text-secondary hover:text-accent transition">Contacto</a></li>
-        </ul>
-      </div>
-
-      <!-- Especialidades -->
-      <div>
-        <h3 class="font-semibold text-muga-text-primary mb-4">Especialidades</h3>
-        <ul class="space-y-2 text-sm text-muga-text-secondary">
-          <li class="flex items-center">
-            <span class="w-2 h-2 bg-accent rounded-full mr-2"></span>
-            Photoshop & Illustrator
-          </li>
-          <li class="flex items-center">
-            <span class="w-2 h-2 bg-accent rounded-full mr-2"></span>
-            Premiere Pro & After Effects
-          </li>
-          <li class="flex items-center">
-            <span class="w-2 h-2 bg-accent rounded-full mr-2"></span>
-            Branding & Motion Graphics
-          </li>
-        </ul>
-      </div>
+    <div class="flex justify-center">
+      <ArrowLink
+        href="/modelo-negocio"
+        text="Modelo de Negocio"
+        textColor="text-accent hover:text-blue-500"
+      />
     </div>
-
-    <div class="text-center text-sm text-muga-text-secondary mb-4">
-      <p>¿Necesitás desarrollo web? → <a href="https://muga.dev" class="text-muga-text-secondary hover:text-accent transition">MUGA.dev</a></p>
+    <div class="mt-4 text-center text-sm text-muga-neutral">
+      <p>
+        <span class="font-mono">{new Date().getFullYear()}</span>
+        <span class="font-medium text-accent">MUGA</span>.
+      </p>
+      <p class="mt-2 text-xs text-muga-neutral font-light">
+        Parte de MUGA — estudio digital independiente.
+      </p>
+      <p class="mt-1 text-sm text-muga-neutral">
+        ¿Buscás un sitio web? <a
+          rel="noopener"
+          href="https://muga.dev"
+          class="text-accent hover:text-blue-500 transition-colors">MUGA DEV</a>
+      </p>
+      <p class="mt-1 text-xs text-graylight font-mono">Versión 1.0.0</p>
     </div>
-
-    <div class="border-t border-gray-200 pt-6 text-center text-sm text-muga-text-secondary">
-      <p> <span class="font-mono">{new Date().getFullYear()}</span>  <span class="font-medium text-accent">MUGA STUDIO</span>.</p>
-      <p class="mt-1 text-xs text-muga-text-secondary">Parte de MUGA — estudio digital independiente.</p>
-    </div>
-      <div class="text-xs text-muga-text-secondary text-center opacity-60">ver.1.0.0</div>
   </div>
 </footer>
